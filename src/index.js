@@ -1,21 +1,15 @@
-const express = require('express');
-const morgan = require('morgan');
-const handlebars = require('express-handlebars');
-const app = express();
-const port = 3000;
+const express = require('express')
+const morgan = require('morgan')
+const app = express()
+const port = 3000
 
-// HTTP logger
 app.use(morgan('combined'));
 
-// Template engine
-app.engine('handlebars', handlebars());
-app.set('view engine', 'handlebars');
-
 app.get('/', (req, res) => {
-  res.render('home');
+  res.send('123')
 })
 
 // 127.0.0.1
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}`);
 })
