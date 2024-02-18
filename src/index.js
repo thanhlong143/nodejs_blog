@@ -23,6 +23,22 @@ app.use(express.json());
 
 app.use(methodOverride('_method'));
 
+// app.get('/middleware',
+//     function(req, res, next) {
+//         if (['vethuong', 'vevip'].includes(req.query.ve)) {
+//             req.face = 'gach gach gach!!!'
+//             return next();
+//         }
+//         res.status(403).json({message: "Access denied"});
+//     },
+//     function(req, res, next) {
+//         res.json({
+//             message: 'Successfully',
+//             face: req.face
+//         });
+//     }
+// )
+
 // HTTP logger
 // app.use(morgan('combined'));
 
