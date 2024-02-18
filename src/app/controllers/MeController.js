@@ -9,7 +9,16 @@ class MeController {
                 courses: multipleMongooseToObject(courses),
             }))
             .catch(next);
-    }
+    };
+
+    // [GET] /me/trash/courses
+    trashCourses(req, res, next) {
+        Course.findWithDeleted({deleted:true})
+            .then(courses => res.render('me/trash-courses', {
+                courses: multipleMongooseToObject(courses),
+            }))
+            .catch(next);
+    };
 }
 
 module.exports = new MeController();
