@@ -25,6 +25,18 @@ class CourseController {
             .save()
             .then(() => res.redirect('/me/stored/courses'))
             .catch(next);
+
+        // Không dùng
+        // Course.findOne({})
+        //     .sort({_id: 'desc'})
+        //     .then(latestCourse => {
+        //         req.body._id = latestCourse._id + 1;
+        //         const course = new Course(req.body);
+        //         course
+        //             .save()
+        //             .then(() => res.redirect('/me/stored/courses'))
+        //             .catch(next);
+        //     });
     }
 
     // [GET] /courses/:id/edit
